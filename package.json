@@ -1,0 +1,34 @@
+{
+  "name": "react-utilz",
+  "version": "0.0.1",
+  "description": "Some simple React utility components",
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "test": "react-scripts test --watchAll=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mathiasbosman/react-utilz/"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "path": "^0.12.7",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "webpack-cli": "^4.9.1"
+  }
+}

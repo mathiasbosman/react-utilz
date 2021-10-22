@@ -1,0 +1,11 @@
+{
+    "env": {
+        "node": true,
+        "jest": true
+    },
+    "parserOptions": {
+        "project": "../../tsconfig.json"
+    },
+    "rules": {
+    }
+}

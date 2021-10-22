@@ -1,0 +1,1 @@
+export {default as Age} from "Components/Age";
