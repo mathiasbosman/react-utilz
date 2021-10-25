@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Renders the copyright icon `&copy` followed by the current year and a given name.
+ */
 class Copyright extends React.Component {
   constructor(props) {
     super(props);

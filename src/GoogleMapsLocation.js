@@ -1,10 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Renders a Google Maps link for a given location
+ */
 class GoogleMapsLocation extends React.Component {
 
   constructor(props) {
     super(props);
+    // as we do not want the extra props to be propagated to the DOM element we remove them
     const propsToCopy = {...props};
     delete propsToCopy.postalCode;
     delete propsToCopy.locationName;
@@ -34,8 +38,11 @@ class GoogleMapsLocation extends React.Component {
 }
 
 GoogleMapsLocation.propTypes = {
+  /**  Postal code */
   postalCode: PropTypes.string,
+  /** The location name (usually the name of the town or city) **/
   locationName: PropTypes.string.isRequired,
+  /** Country of the location **/
   country: PropTypes.string
 }
 

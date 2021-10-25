@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+/**
+ * Renders an age as string based on the birth date.
+ */
 class Age extends React.Component {
   constructor(props) {
     super(props);
