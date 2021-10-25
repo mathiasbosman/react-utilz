@@ -1,8 +1,11 @@
 .idea
 *.iml
 
-/node_modules
-/build
+node_modules
+dist
+coverage
+lib/
+lib-esm/
 
-# Project exclude paths
-/lib/
+# misc
+.DS_Store

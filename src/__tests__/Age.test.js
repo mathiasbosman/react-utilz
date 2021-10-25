@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import Age from "../Components/Age";
+import Age from "../Age";
 
 describe("Age component", () => {
   test("renders years correctly", () => {
@@ -44,5 +44,16 @@ describe("Age component", () => {
 
     render(<Age birthdate="1990-12-05"/>);
     expect(screen.getByText("2 months")).toBeInTheDocument();
+  });
+
+  test("renders invalid", () => {
+    jest
+    .spyOn(global.Date, "now")
+    .mockImplementationOnce(() =>
+        new Date("1990-12-06T09:00:00.000Z").valueOf()
+    );
+
+    render(<Age birthdate="1990-12-07"/>);
+    expect(screen.getByText("N.a.N.")).toBeInTheDocument();
   });
 });

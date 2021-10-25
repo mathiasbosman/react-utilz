@@ -13,6 +13,9 @@ class Age extends React.Component {
   _calculateAge() {
     const today = new Date(Date.now());
     const monthDiff = today - this.state.birthdate.getTime();
+    if (monthDiff < 0) {
+      return "N.a.N.";
+    }
     const yearDiff = new Date(monthDiff).getUTCFullYear();
     const years = Math.abs(yearDiff - 1970);
     if (years > 0) {
@@ -37,6 +40,10 @@ class Age extends React.Component {
 }
 
 Age.propTypes = {
+  /**
+   * The birthdate as a string.
+   * It is possible to pass the javascript Date object as well.
+   */
   birthdate: PropTypes.string.isRequired
 }
 

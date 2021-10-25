@@ -2,33 +2,83 @@
   "name": "react-utilz",
   "version": "0.0.1",
   "description": "Some simple React utility components",
-  "main": "./lib/index.js",
+  "keywords": [
+    "react",
+    "components",
+    "ui"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "test": "react-scripts test --watchAll=false"
+    "setup": "./scripts/setup",
+    "build": "./scripts/build",
+    "test": "react-scripts test --watchAll=false",
+    "test-with-coverage": "react-scripts test --watchAll=false --coverage",
+    "lint": "eslint './src/*.{js,ts,tsx,md,mdx}'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/mathiasbosman/react-utilz/"
   },
-  "peerDependencies": {
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+  "author": "Mathias Bosman (https://github.com/mathiasbosman)",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10"
   },
   "devDependencies": {
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/jest-dom": "^5.14.1",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "path": "^0.12.7",
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/preset-env": "^7.13.12",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/node-logger": "^6.3.12",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.3.12",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "^4.0.3",
-    "webpack-cli": "^4.9.1"
-  }
+    "react-scripts": "4.0.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "files": [
+    "lib",
+    "lib-esm",
+    "index.js",
+    "!lib/__tests__",
+    "!lib/stories",
+    "!lib-esm/__tests__",
+    "!lib-esm/stories"
+  ]
 }
